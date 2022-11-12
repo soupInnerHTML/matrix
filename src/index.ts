@@ -1,6 +1,6 @@
 window.addEventListener('resize', () => location.reload())
 
-window.onload = function () {
+window.addEventListener('load', () => {
     class Canvas {
         cnv = document.createElement('canvas')
         ctx = this.cnv.getContext('2d')
@@ -26,8 +26,8 @@ window.onload = function () {
 
         constructor() {
             document.body.append(this.cnv)
-            this.cnv.width = window.innerWidth;
-            this.cnv.height = window.innerHeight;
+            this.cnv.width = window.visualViewport.width;
+            this.cnv.height = window.visualViewport.height;
         }
     }
 
@@ -46,10 +46,10 @@ window.onload = function () {
         constructor(private canvas) {}
         speed = 50
         cols = Utils.zeros(Math.round(this.canvas.width / this.canvas.fontSize))
-        glyphs = "牡マキグナルファ系路克瑞大阪市立学鎰命科ャマ能力ϒ人は妻スティ要望通り玉宏サ丹谷Ѫ灯影伝鶐"
+        glyphs = " 牡マキグナルファ系路克瑞 大阪市立学鎰命科ャ マ能力ϒ人は妻スティ要 望通り玉宏サ丹谷Ѫ灯影伝鶐"
         alphabet = this.glyphs.split('')
 
-        randomShift = 0.975
+        randomShift = 0.97
 
         draw() {
             return setInterval(() => {
@@ -82,4 +82,4 @@ window.onload = function () {
     const matrix = new Matrix(canvas)
 
     matrix.draw()
-}
+})

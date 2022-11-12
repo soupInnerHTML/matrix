@@ -1,5 +1,5 @@
 window.addEventListener('resize', function () { return location.reload(); });
-window.onload = function () {
+window.addEventListener('load', function () {
     var Canvas = /** @class */ (function () {
         function Canvas() {
             this.cnv = document.createElement('canvas');
@@ -7,8 +7,8 @@ window.onload = function () {
             this.fontSize = 13;
             this.color = "#00ff00";
             document.body.append(this.cnv);
-            this.cnv.width = window.innerWidth;
-            this.cnv.height = window.innerHeight;
+            this.cnv.width = window.visualViewport.width;
+            this.cnv.height = window.visualViewport.height;
         }
         Object.defineProperty(Canvas.prototype, "width", {
             get: function () {
@@ -52,9 +52,9 @@ window.onload = function () {
             this.canvas = canvas;
             this.speed = 50;
             this.cols = Utils.zeros(Math.round(this.canvas.width / this.canvas.fontSize));
-            this.glyphs = "牡マキグナルファ系路克瑞大阪市立学鎰命科ャマ能力ϒ人は妻スティ要望通り玉宏サ丹谷Ѫ灯影伝鶐";
+            this.glyphs = " 牡マキグナルファ系路克瑞 大阪市立学鎰命科ャ マ能力ϒ人は妻スティ要 望通り玉宏サ丹谷Ѫ灯影伝鶐";
             this.alphabet = this.glyphs.split('');
-            this.randomShift = 0.975;
+            this.randomShift = 0.97;
         }
         Matrix.prototype.draw = function () {
             var _this = this;
@@ -81,4 +81,4 @@ window.onload = function () {
     var canvas = new Canvas();
     var matrix = new Matrix(canvas);
     matrix.draw();
-};
+});
