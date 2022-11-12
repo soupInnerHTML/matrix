@@ -25,7 +25,7 @@ window.addEventListener('load', () => {
         }
 
         constructor() {
-            document.body.append(this.cnv)
+            document.body.prepend(this.cnv)
             this.cnv.width = window.visualViewport.width;
             this.cnv.height = window.visualViewport.height;
         }

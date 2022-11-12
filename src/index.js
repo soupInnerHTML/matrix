@@ -6,7 +6,7 @@ window.addEventListener('load', function () {
             this.ctx = this.cnv.getContext('2d');
             this.fontSize = 13;
             this.color = "#00ff00";
-            document.body.append(this.cnv);
+            document.body.prepend(this.cnv);
             this.cnv.width = window.visualViewport.width;
             this.cnv.height = window.visualViewport.height;
         }
